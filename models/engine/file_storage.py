@@ -39,6 +39,6 @@ class FileStorage:
             with open(FileStorage.__file_path) as file:
                 list_l = json.load(file)
             for key, value in list_l.items():
-                FileStorage.__objects[key] = BaseModel(**value)
+                FileStorage.__objects.update({key: BaseModel(**value)})
         except:
             pass
