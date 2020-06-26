@@ -24,9 +24,21 @@ class FileStorage:
         """
         FileStorage.__objects["{}.{}".format(obj.__class__.__name__, obj.id)] = obj
     def save(self):
+        """Save"""
         dic = {}
         for key, value in FileStorage.__objects.items():
             dic.update({key: value.to_dict()})
         dic_dumps = json.dumps(dic)
         with open(FileStorage.__file_path, "w") as file:
             file.write(dic_dumps)
+
+    def reload(self):
+        """Reload"""
+
+        try:
+            with open(FileStorage.__file_path) as file:
+                list_l = json.load(file)
+            for key, value in list_l.items():
+                FileStorage.__objects[key] = BaseModel(**value)
+        except:
+            pass
