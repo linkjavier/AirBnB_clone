@@ -11,17 +11,23 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb)"
 
     def do_quit(self, args):
-        """ Quit command to exit the program """
+        """ 
+            Quit command to exit the program
+        """
 
         return(True)
 
     def do_EOF(self, args):
-        """ EOF to exit the program """
+        """ 
+            EOF to exit the program
+        """
 
         return(True)
 
     def emptyline(self):
-        """an empty line executes anything"""
+        """
+            An empty line executes anything
+        """
 
         pass
 
@@ -40,7 +46,10 @@ class HBNBCommand(cmd.Cmd):
             print(new.id)
 
     def do_show(self, args):
-        """ Prints the string representation of an instance """
+        """
+            Prints the string representation of an instance
+        """
+
         if not args:
             print("** class name missing **")
         else:
@@ -59,7 +68,9 @@ class HBNBCommand(cmd.Cmd):
                     print("** no instance found **")
 
     def do_destroy(self, args):
-        """ Deletes an instance """
+        """
+            Deletes an instance
+        """
 
         if not args:
             print("** class name missing **")
@@ -78,8 +89,10 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     print("** no instance found **")
 
-        def do_all(self, args):
-            """ Prints all string representation of all instances """
+    def do_all(self, args):
+        """
+            Prints all string representation of all instances
+        """
 
         if not args == "BaseModel" and len(args) > 0:
             print("** class doesn't exist **")
@@ -91,7 +104,9 @@ class HBNBCommand(cmd.Cmd):
             print(list_all)
 
     def do_update(self, args):
-        """ Updates an instance """
+        """
+            Updates an instance
+        """
 
         if not args:
             print("** class name missing **")
