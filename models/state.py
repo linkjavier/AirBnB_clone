@@ -3,7 +3,7 @@
 from models.base_model import BaseModel
 
 
-class Satate(BaseModel):
+class State(BaseModel):
     """
         Class State that inherits from BaseModel
     """
