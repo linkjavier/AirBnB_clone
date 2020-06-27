@@ -77,8 +77,9 @@ class HBNBCommand(cmd.Cmd):
                     storage.save()
                 else:
                     print("** no instance found **")
-    def do_all(self, args):
-        """ Prints all string representation of all instances """
+
+        def do_all(self, args):
+            """ Prints all string representation of all instances """
 
         if not args == "BaseModel" and len(args) > 0:
             print("** class doesn't exist **")
@@ -110,18 +111,11 @@ class HBNBCommand(cmd.Cmd):
                         print("** value missing **")
                     else:
                         obj = dic_obj[id_found]
-                        setattr(obj, "Name", 'Directo')
-                        # setInDict(dic_obj, [obj, list_arg[2]], list_arg[3])
-                        # obj.list_arg[2] = list_arg[3]
+                        setattr(obj, list_arg[2].replace('"', ''),
+                                list_arg[3].replace('"', ''))
                         obj.save()
-
-
-
                 else:
                     print("** no instance found **")
-
-
-
 
 if __name__ == '__main__':
     console = HBNBCommand()
