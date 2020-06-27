@@ -4,9 +4,22 @@ import cmd
 from models.base_model import BaseModel
 from models import storage
 from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
-obj_class = {'BaseModel': BaseModel, 'User': User}
+obj_class = {
+    'BaseModel': BaseModel,
+    'User': User,
+    'State': State,
+    'City': City,
+    'Amenity': Amenity,
+    'Place': Place,
+    'Review': Review
+    }
 
 
 class HBNBCommand(cmd.Cmd):
@@ -15,14 +28,14 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb)"
 
     def do_quit(self, args):
-        """ 
+        """
             Quit command to exit the program
         """
 
         return(True)
 
     def do_EOF(self, args):
-        """ 
+        """
             EOF to exit the program
         """
 
@@ -42,10 +55,10 @@ class HBNBCommand(cmd.Cmd):
         """
         if not args:
             print("** class name missing **")
-        elif not args in obj_class:
+        elif not (args in obj_class):
             print("** class doesn't exist **")
         else:
-            new = obj_class[args]() 
+            new = obj_class[args]()
             new.save()
             print(new.id)
 
@@ -98,7 +111,7 @@ class HBNBCommand(cmd.Cmd):
             Prints all string representation of all instances
         """
 
-        if not args in obj_class and len(args) > 0:
+        if not (args in obj_class) and len(args) > 0:
             print("** class doesn't exist **")
         else:
             obj_all = storage.all()

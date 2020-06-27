@@ -3,8 +3,21 @@
 import json
 from models.base_model import BaseModel
 from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
-obj_class = {'BaseModel': BaseModel, 'User': User}
+obj_class = {
+    'BaseModel': BaseModel,
+    'User': User,
+    'State': State,
+    'City': City,
+    'Amenity': Amenity,
+    'Place': Place,
+    'Review': Review
+    }
 
 
 class FileStorage:
@@ -53,6 +66,7 @@ class FileStorage:
                 list_l = json.load(file)
             for key, value in list_l.items():
                 key_class = key.split(".")
-                FileStorage.__objects.update({key: obj_class[key_class[0]](**value)})
+                FileStorage.__objects.update({key: obj_class[key_class[0]]
+                                             (**value)})
         except:
             pass
