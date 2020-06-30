@@ -38,7 +38,7 @@ class TestDocsB(unittest.TestCase):
 
 
 class TestUser(unittest.TestCase):
-    """Class TestBaseModel """
+    """Class TestUser """
     def setUp(self):
         self.user_1 = User()
         self.user_2 = User()
