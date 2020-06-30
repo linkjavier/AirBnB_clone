@@ -40,6 +40,7 @@ class TestDocsB(unittest.TestCase):
 class TestBaseModel(unittest.TestCase):
     """Class TestBaseModel """
     def setUp(self):
+        """set up """
         self.basemodel = BaseModel()
         self.basemodel2 = BaseModel()
 
