@@ -66,13 +66,6 @@ class TestBaseModel(unittest.TestCase):
         updated = self.basemodel.updated_at
         self.assertEqual(created, updated)
 
-    def check_save2(self):
-        """ Check the save method"""
-        created = self.basemodel.created_at
-        self.basemodel.save()
-        updated = self.basemodel.updated_at
-        self.assertNotEqual(created, updated)
-
     def check_dic(self):
         """ Checks a correct dictionary"""
         date = "%Y-%m-%dT%H:%M:%S.%f"
