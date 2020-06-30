@@ -38,7 +38,7 @@ class TestDocsB(unittest.TestCase):
 
 
 class TestState(unittest.TestCase):
-    """Class TestBaseModel """
+    """Class TestState """
     def setUp(self):
         self.state_1 = State()
         self.state_2 = State()
