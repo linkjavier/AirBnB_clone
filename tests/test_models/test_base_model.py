@@ -64,12 +64,12 @@ class TestBaseModel(unittest.TestCase):
         """ Checks a correct dictionary"""
         date = "%Y-%m-%dT%H:%M:%S.%f"
         test_dic = self.basemodel.to_dict()
-        self.assertEqual(type(dic["created_at"]), str)
+        self.assertEqual(type(test_dic["created_at"]), str)
         self.assertEqual(test_dic["__class__"], "BaseModel")
         self.assertEqual(test_dic["created_at"],
-                         self.basemodel.created_at.strftime(form))
+                         self.basemodel.created_at.strftime(date))
         self.assertEqual(test_dic["updated_at"],
-                         self.basemodel.updated_at.strftime(form))
+                         self.basemodel.updated_at.strftime(date))
 
     if __name__ == '__main__':
         unittest.main()
