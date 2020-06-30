@@ -37,8 +37,8 @@ class TestDocsB(unittest.TestCase):
             self.assertTrue(len(func.__doc__) > 0)
 
 
-class TestCity(unittest.TestCase):
-    """Class TestCity """
+class TestReview(unittest.TestCase):
+    """Class TestReview """
     def setUp(self):
         self.review_1 = Review()
         self.review_2 = Review()
