@@ -64,7 +64,7 @@ class TestBaseModel(unittest.TestCase):
         created = self.basemodel.created_at
         self.basemodel.save()
         updated = self.basemodel.updated_at
-        self.assertEqual(created, updated)
+        self.assertNotEqual(created, updated)
 
     def check_dic(self):
         """ Checks a correct dictionary"""
