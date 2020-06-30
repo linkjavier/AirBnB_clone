@@ -42,6 +42,7 @@ class TestDocsB(unittest.TestCase):
 class TestFileStorage(unittest.TestCase):
     """Class FileStorage """
     def setUp(self):
+        """ Instance the FileStorage"""
         self.storage_1 = FileStorage()
 
     def check_instance(self):
