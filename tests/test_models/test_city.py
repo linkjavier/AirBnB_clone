@@ -46,7 +46,7 @@ class TestCity(unittest.TestCase):
     def check_instance(self):
         """ Check the existence of instance """
         self.assertIsInstance(self.city_1, City)
-        self.assertIsInstance(self.City_2, City)
+        self.assertIsInstance(self.city_2, City)
 
     def check_attributes(self):
         """ Checks str type for attributes """
