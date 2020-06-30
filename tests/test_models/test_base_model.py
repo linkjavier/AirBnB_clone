@@ -43,6 +43,7 @@ class TestBaseModel(unittest.TestCase):
         """set up """
         self.basemodel = BaseModel()
         self.basemodel2 = BaseModel()
+        self.model0 = BaseModel()
 
     def tearDown(self):
         """ . """
@@ -61,10 +62,13 @@ class TestBaseModel(unittest.TestCase):
 
     def check_save(self):
         """ Check the save method"""
-        created = self.basemodel.created_at
-        updated = self.basemodel.updated_at
-        self.basemodel.save()
-        self.assertNotEqual(created, updated)
+        old_created_at = self.model0.created_at
+        old_updated_at = self.model0.updated_at
+        self.model0.save()
+        new_created_at = self.model0.created_at
+        new_updated_at = self.model0.updated_at
+        self.assertNotEqual(old_updated_at, new_updated_at)
+        self.assertEqual(old_created_at, new_created_at)
 
     def check_dic(self):
         """ Checks a correct dictionary"""
