@@ -8,6 +8,7 @@ from datetime import datetime
 from models.base_model import BaseModel
 from models.engine import file_storage
 from models.engine.file_storage import FileStorage
+import os
 
 
 class TestPep8B(unittest.TestCase):
@@ -30,7 +31,7 @@ class TestDocsB(unittest.TestCase):
 
     def test_class_doc(self):
         """ Check for documentation """
-        self.assertTrue(len(file_storage.__doc__) > 0)
+        self.assertTrue(len(FileStorage.__doc__) > 0)
 
     def test_method_docs(self):
         """ Check for method documentation """
@@ -52,6 +53,16 @@ class TestFileStorage(unittest.TestCase):
         dic = self.storage_1.all()
         self.assertEqual(type(dic), dict)
         self.assertIs(dic, self.storage_1._FileStorage__objects)
+
+    def test_permissions(self):
+        """test read-write-execute permissions"""
+        read = os.access('models/engine/file_storage.py', os.R_OK)
+        self.assertTrue(read)
+        write = os.access('models/engine/file_storage.py', os.W_OK)
+        self.assertTrue(write)
+        exe = os.access('models/engine/file_storage.py', os.X_OK)
+        self.assertTrue(exe)
+
 
 if __name__ == '__main__':
     unittest.main()
