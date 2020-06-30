@@ -64,7 +64,7 @@ class TestBaseModel(unittest.TestCase):
         created = self.basemodel.created_at
         self.basemodel.save()
         updated = self.basemodel.updated_at
-        self.assertNotEqual(created, updated)
+        self.assertEqual(created, updated)
 
     def check_save2(self):
         """ Check the save method"""
