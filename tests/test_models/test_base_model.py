@@ -44,6 +44,11 @@ class TestBaseModel(unittest.TestCase):
         self.basemodel = BaseModel()
         self.basemodel2 = BaseModel()
 
+    def tearDown(self):
+        """ . """
+        del self.basemodel
+        del self.basemodel2
+
     def check_instance(self):
         """ Check the existence of instance """
         self.assertIsInstance(self.basemodel, BaseModel)
