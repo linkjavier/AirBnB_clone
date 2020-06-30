@@ -5,7 +5,7 @@ from uuid import uuid4
 from datetime import datetime
 
 
-class BaseModel():
+class BaseModel:
     """ Defines all common attributes/methods """
 
     def __init__(self, *args, **kwargs):
