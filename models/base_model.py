@@ -9,7 +9,7 @@ class BaseModel:
     """ Defines all common attributes/methods """
 
     def __init__(self, *args, **kwargs):
-        """Init"""
+        """Init Basemodel"""
         if kwargs:
             for key, value in kwargs.items():
                 if key == 'created_at' or key == 'updated_at':
