@@ -4,8 +4,6 @@
 """
 import unittest
 import pep8
-from datetime import datetime
-from models.base_model import BaseModel
 from models.engine import file_storage
 from models.engine.file_storage import FileStorage
 import os
@@ -41,19 +39,10 @@ class TestDocsB(unittest.TestCase):
 
 class TestFileStorage(unittest.TestCase):
     """Class FileStorage """
-    def setUp(self):
-        """ Instance the FileStorage"""
-        self.storage_1 = FileStorage()
-
+    
     def check_instance(self):
         """ Check the existence of instance """
         self.assertIsInstance(self.storage_1, FileStorage)
-
-    def check_all(self):
-        """ Checks a correct dictionary """
-        dic = self.storage_1.all()
-        self.assertEqual(type(dic), dict)
-        self.assertIs(dic, self.storage_1._FileStorage__objects)
 
     def test_permissions(self):
         """test read-write-execute permissions"""
