@@ -16,10 +16,11 @@ Our command interpreter allows us to manage all the functionality of the applica
 - `quit`/EOF quit the console
 - `help`
 
-# How to start the interpreter
+#⚙ How to start the interpreter
 In the command line run `./console.py` or `echo help | ./console.py`
-# How to use the interpreter
+#✔ How to use the interpreter
 
+Command | Syntax | Output
 ------- | ------ | ------
 help | `help [option]` | Lists all available commands, or displays what option does
 quit | `quit` | Exit command interpreter
@@ -31,7 +32,7 @@ all | `all [class_name]` | Displays every instance of class_name, if used withou
 destroy | `destroy [class_name] [object_id]` | Deletes all attributes of class_name.object_id
 count | `[class_name].count()` | Counts all the instances with class name specified
 
-#  Testing our console
+# 💻 Testing our console
 ```
 /Holberton/AirBnB_clone$ ./console.py
 (hbnb)help
@@ -58,3 +59,17 @@ EOF  all  create  destroy  help  quit  show  update
 ** no instance found **
 (hbnb)quit
 ```
+## 🚀Authors
+
+**Laura Villan** ![GitHub followers](https://img.shields.io/github/followers/laucavv?label=Follow&style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/laucavv23?label=%40laucavv23&style=social)
+
+**Javier Charria** ![GitHub followers](https://img.shields.io/github/followers/linkjavier?label=Follow&style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/linkjavier?label=%40Ayy_Emma&style=social)
+
+## Made in
+![readme2](https://user-images.githubusercontent.com/60374349/77229662-224fb100-6b5d-11ea-89ff-188607b48859.png)
+
+**Holberton School - Foundations - Higher-level programming ― AirBnB clone**
+
+**July, 2020.**
