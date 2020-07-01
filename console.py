@@ -9,6 +9,7 @@ from models.city import City
 from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
+import re
 
 
 obj_class = {
@@ -78,6 +79,10 @@ class HBNBCommand(cmd.Cmd):
                     if args_s[0] == token[0]:
                         count += 1
                 print(count)
+            elif args_s[1][:4] == "show":
+                id = re.split(r'show\("|"\)', args_s[1])
+                string = args_s[0] + " " + id[1]
+                self.do_show(string)
 
     def do_show(self, args):
         """
