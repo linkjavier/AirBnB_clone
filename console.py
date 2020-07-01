@@ -83,6 +83,10 @@ class HBNBCommand(cmd.Cmd):
                 id = re.split(r'show\("|"\)', args_s[1])
                 string = args_s[0] + " " + id[1]
                 self.do_show(string)
+            elif args_s[1][:7] == "destroy":
+                id = re.split(r'destroy\("|"\)', args_s[1])
+                string = args_s[0] + " " + id[1]
+                self.do_destroy(string)
 
     def do_show(self, args):
         """
