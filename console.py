@@ -87,6 +87,13 @@ class HBNBCommand(cmd.Cmd):
                 id = re.split(r'destroy\("|"\)', args_s[1])
                 string = args_s[0] + " " + id[1]
                 self.do_destroy(string)
+            elif args_s[1][:6] == "update":
+                list_u = re.split(r'update\("|"|, "|\)', args_s[1])
+                print(list_u)
+                print("hola")
+                string = args_s[0]+ " " + list_u[1] +\
+                         " " + list_u[3] + " " + list_u[5]
+                self.do_update(string)
 
     def do_show(self, args):
         """
