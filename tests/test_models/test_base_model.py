@@ -50,6 +50,7 @@ class TestBaseModel(unittest.TestCase):
         """ . """
         del self.basemodel
         del self.basemodel2
+        del self.model0
 
     def check_instance(self):
         """ Check the existence of instance """
