@@ -7,6 +7,7 @@ import pep8
 from datetime import datetime
 from models import base_model
 from models.base_model import BaseModel
+import os
 
 
 class TestPep8B(unittest.TestCase):
@@ -80,6 +81,15 @@ class TestBaseModel(unittest.TestCase):
                          self.basemodel.created_at.strftime(date))
         self.assertEqual(test_dic["updated_at"],
                          self.basemodel.updated_at.strftime(date))
+
+    def test_permissions(self):
+        """test read-write-execute permissions"""
+        read = os.access('models/base_model.py', os.R_OK)
+        self.assertTrue(read)
+        write = os.access('models/base_model.py', os.W_OK)
+        self.assertTrue(write)
+        exe = os.access('models/base_model.py', os.X_OK)
+        self.assertTrue(exe)
 
     if __name__ == '__main__':
         unittest.main()
