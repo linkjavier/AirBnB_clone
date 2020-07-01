@@ -1,11 +1,12 @@
 ![HBNB](https://user-images.githubusercontent.com/54350108/85913016-b08ba100-b7f6-11ea-8f18-0c27ce10e218.jpg)
+![GitHub contributors](https://img.shields.io/github/contributors/laucavv/AirBnB_clone?style=plastic)
 
 0x00. AirBnB clone - The console0x00. AirBnB clone - The console
 
-# Description of the project
+# 📃Description of the project
 This is the first multi-part project to build a full [AirBnb](https://es.airbnb.com/?_set_bev_on_new_domain=1592945111_bWw%2By%2F%2FvZh5U%2BDGg) web app clone. In this first part, the command interpreter will be implemented in the Python programming language, in which through the console we can store objects and retrieve objects from a JSON.
 
-# Description of the command interpreter
+# 👩🏻‍💻👨🏻‍💻 Description of the command interpreter
 This command interpreter is similar to a BASH shell but is designed for a specific use case.
 Our command interpreter allows us to manage all the functionality of the application from the command line, such as:
 - `create`
@@ -16,9 +17,16 @@ Our command interpreter allows us to manage all the functionality of the applica
 - `quit`/EOF quit the console
 - `help`
 
-#⚙ How to start the interpreter
+## 📥Downloading
+
+You can download this repository like this:
+
+`git clone https://github.com/laucavv/AirBnB_clone.git`
+
+# ⚙ How to start the interpreter
 In the command line run `./console.py` or `echo help | ./console.py`
-#✔ How to use the interpreter
+
+# ✔ How to use the interpreter
 
 Command | Syntax | Output
 ------- | ------ | ------
@@ -65,7 +73,7 @@ EOF  all  create  destroy  help  quit  show  update
 ![Twitter Follow](https://img.shields.io/twitter/follow/laucavv23?label=%40laucavv23&style=social)
 
 **Javier Charria** ![GitHub followers](https://img.shields.io/github/followers/linkjavier?label=Follow&style=social)
-![Twitter Follow](https://img.shields.io/twitter/follow/linkjavier?label=%40Ayy_Emma&style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/linkjavier?label=%40linkjavier&style=social)
 
 ## Made in
 ![readme2](https://user-images.githubusercontent.com/60374349/77229662-224fb100-6b5d-11ea-89ff-188607b48859.png)
