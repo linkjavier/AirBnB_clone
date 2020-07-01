@@ -63,7 +63,9 @@ class HBNBCommand(cmd.Cmd):
             print(new.id)
 
     def default(self, args):
-        """ Recognize <class name>.all() and count instances """
+        """
+            Recognize <class name>.all() and count instances
+        """
         args_s = args.split('.')
         if len(args_s) == 2:
             if args_s[1] == "all()":
@@ -123,7 +125,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, args):
         """
-        Prints all string representation of all instances.
+            Prints all string representation of all instances.
         """
         list_all = []
         args_s = args.split(' ')
