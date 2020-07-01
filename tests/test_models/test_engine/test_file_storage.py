@@ -39,7 +39,7 @@ class TestDocsB(unittest.TestCase):
 
 class TestFileStorage(unittest.TestCase):
     """Class FileStorage """
-    
+
     def check_instance(self):
         """ Check the existence of instance """
         self.assertIsInstance(self.storage_1, FileStorage)
