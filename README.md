@@ -1,12 +1,12 @@
 ![HBNB](https://user-images.githubusercontent.com/54350108/85913016-b08ba100-b7f6-11ea-8f18-0c27ce10e218.jpg)
 ![GitHub contributors](https://img.shields.io/github/contributors/laucavv/AirBnB_clone?style=plastic)
 
-0x00. AirBnB clone - The console0x00. AirBnB clone - The console
+# 0x00. AirBnB clone - The console0x00. AirBnB clone - The console
 
-# 📃Description of the project
+## 📃Description of the project
 This is the first multi-part project to build a full [AirBnb](https://es.airbnb.com/?_set_bev_on_new_domain=1592945111_bWw%2By%2F%2FvZh5U%2BDGg) web app clone. In this first part, the command interpreter will be implemented in the Python programming language, in which through the console we can store objects and retrieve objects from a JSON.
 
-# 👩🏻‍💻👨🏻‍💻 Description of the command interpreter
+## 👩🏻‍💻👨🏻‍💻 Description of the command interpreter
 This command interpreter is similar to a BASH shell but is designed for a specific use case.
 Our command interpreter allows us to manage all the functionality of the application from the command line, such as:
 - `create`
@@ -23,10 +23,10 @@ You can download this repository like this:
 
 `git clone https://github.com/laucavv/AirBnB_clone.git`
 
-# ⚙ How to start the interpreter
+## ⚙ How to start the interpreter
 In the command line run `./console.py` or `echo help | ./console.py`
 
-# ✔ How to use the interpreter
+## ✔ How to use the interpreter
 
 Command | Syntax | Output
 ------- | ------ | ------
@@ -40,7 +40,22 @@ all | `all [class_name]` | Displays every instance of class_name, if used withou
 destroy | `destroy [class_name] [object_id]` | Deletes all attributes of class_name.object_id
 count | `[class_name].count()` | Counts all the instances with class name specified
 
-# 💻 Testing our console
+##  📑Testing
+
+Unittests for the HolbertonBnB project are defined in the [tests](./tests) 
+folder. To run the entire test suite simultaneously, execute the following command:
+
+```
+$ python3 unittest -m discover tests
+```
+
+Alternatively, you can specify a single test file to run at a time:
+
+```
+$ python3 unittest -m tests/test_console.py
+```
+
+## 💻 Using our console
 ```
 /Holberton/AirBnB_clone$ ./console.py
 (hbnb)help
