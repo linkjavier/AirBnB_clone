@@ -62,6 +62,21 @@ class HBNBCommand(cmd.Cmd):
             new.save()
             print(new.id)
 
+    def default(self, args):
+        """ Recognize <class name>.all() and count instances """
+        args_s = args.split('.')
+        if len(args_s) == 2:
+            if args_s[1] == "all()":
+                self.do_all(args_s[0])
+            elif args_s[1] == "count()":
+                count = 0
+                list_all = storage.all()
+                for key, value in list_all.items():
+                    token = str(key).split('.')
+                    if args_s[0] == token[0]:
+                        count += 1
+                print(count)
+
     def do_show(self, args):
         """
             Prints the string representation of an instance
@@ -108,16 +123,22 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, args):
         """
-            Prints all string representation of all instances
+        Prints all string representation of all instances.
         """
-
-        if not (args in obj_class) and len(args) > 0:
+        list_all = []
+        args_s = args.split(' ')
+        if len(args) == 0:
+            list_string = []
+            for key, value in storage.all().items():
+                list_all.append(str(value))
+            print(list_all)
+        elif args_s[0] not in obj_class:
             print("** class doesn't exist **")
         else:
             obj_all = storage.all()
-            list_all = []
-            for value in obj_all.values():
-                list_all.append(str(value))
+            for key, value in obj_all.items():
+                if args_s[0] == key.split('.')[0]:
+                    list_all.append(str(value))
             print(list_all)
 
     def do_update(self, args):
