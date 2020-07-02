@@ -80,3 +80,9 @@ class TestConsole(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("help destroy")
         self.assertTrue(len(f.getvalue()) > 0)
+
+    def test_quit(self):
+        """ Test for quit """
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("quit")
+        self.assertTrue(bool(f))
