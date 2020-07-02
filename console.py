@@ -88,23 +88,28 @@ class HBNBCommand(cmd.Cmd):
                 string = args_s[0] + " " + id[1]
                 self.do_destroy(string)
             elif args_s[1][:6] == "update":
-
-                """is_dic = args_s[1][47]
-
-                if (is_dic == '{'):
-                    dic = args_s[1][48:-2]
+                pos = 0
+                s_key = ""
+                for i, s in enumerate(args_s[1], 0):
+                    if s == '{':
+                        pos = i
+                        s_key = s
+                        break
+                if (s_key == '{'):
+                    dic = args_s[1][(pos + 1):-2]
                     for line in dic.split(","):
                         value = line.split(":", 1)
+                        print(value)
                         attr_1 = value[0].strip(" \"\'")
                         attr_2 = value[1].strip(" \"\'")
                         string = args_s[0] + " " + args_s[1][8:44] +\
                             " " + attr_1 + " " + attr_2
                         self.do_update(string)
-                else:"""
-                list_u = re.split(r'update\("|"|, "|\)', args_s[1])
-                string = args_s[0] + " " + list_u[1] +\
-                    " " + list_u[3] + " " + list_u[5]
-                self.do_update(string)
+                else:
+                    list_u = re.split(r'update\("|"|, "|\)', args_s[1])
+                    string = args_s[0] + " " + list_u[1] +\
+                        " " + list_u[3] + " " + list_u[5]
+                    self.do_update(string)
 
     def do_show(self, args):
         """
