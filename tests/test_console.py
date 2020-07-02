@@ -52,13 +52,31 @@ class TestConsole(unittest.TestCase):
         self.assertTrue(exe)
 
     def test_help(self):
-        """ Test for help """
+        """ Test for help show """
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help all")
+        self.assertTrue(len(f.getvalue()) > 0)
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("help show")
         self.assertTrue(len(f.getvalue()) > 0)
-
-    def test_help(self):
-        """ Test for help """
         with patch('sys.stdout', new=StringIO()) as f:
-            HBNBCommand().onecmd("help show")
+            HBNBCommand().onecmd("help create")
+        self.assertTrue(len(f.getvalue()) > 0)
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help update")
+        self.assertTrue(len(f.getvalue()) > 0)
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help quit")
+        self.assertTrue(len(f.getvalue()) > 0)
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help EOF")
+        self.assertTrue(len(f.getvalue()) > 0)
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help emptyline")
+        self.assertTrue(len(f.getvalue()) > 0)
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help default")
+        self.assertTrue(len(f.getvalue()) > 0)
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help destroy")
         self.assertTrue(len(f.getvalue()) > 0)
