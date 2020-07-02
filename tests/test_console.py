@@ -35,3 +35,16 @@ class TestDocsB(unittest.TestCase):
         """ check for method documentation """
         for func in dir(HBNBCommand):
             self.assertTrue(len(func.__doc__) > 0)
+
+
+class TestConsole(unittest.TestCase):
+    """ Class TestConsole """
+
+    def test_permissions(self):
+        """test read-write-execute permissions"""
+        read = os.access('console.py', os.R_OK)
+        self.assertTrue(read)
+        write = os.access('console.py', os.W_OK)
+        self.assertTrue(write)
+        exe = os.access('console.py', os.X_OK)
+        self.assertTrue(exe)
