@@ -7,6 +7,8 @@ from console import HBNBCommand
 import unittest
 import pep8
 import os
+from unittest.mock import patch
+from io import StringIO
 
 
 class TestPep8B(unittest.TestCase):
@@ -48,3 +50,15 @@ class TestConsole(unittest.TestCase):
         self.assertTrue(write)
         exe = os.access('console.py', os.X_OK)
         self.assertTrue(exe)
+
+    def test_help(self):
+        """ Test for help """
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help show")
+        self.assertTrue(len(f.getvalue()) > 0)
+
+    def test_help(self):
+        """ Test for help """
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help show")
+        self.assertTrue(len(f.getvalue()) > 0)
